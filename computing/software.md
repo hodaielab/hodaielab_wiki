@@ -14,6 +14,14 @@ well with the `lmod` system (i.e., the `module` command).
 * [website](https://www.neurodesk.org/)
 * [integration as shell commands using `lmod`](https://www.neurodesk.org/docs/getting-started/neurocommand/hpc/)
 
+#### Installation
+
+1. Google [`lmod documentation`](https://lmod.readthedocs.io/en/latest/#installing-lmod) and go to `Installing Lmod` > `Installing Lua and Lmod` > `Bash under Ubuntu`.
+2. Add the code under the Lmod installation guide's `Bash under Ubuntu` section at the top of your `~/.bashrc` file.
+3. Uncomment all `deb-src` lines in `/etc/apt/sources.list`. Run the code under `Using Your Package Manager for Ubuntu or Debian Systems`.
+4. [Clone](#cloning-a-repository-on-github) the repository of [neurocommand.git](https://github.com/NeuroDesk/neurocommand) without the `export` commands. Add `module use /localdata/neurocommand/local/containers/modules/` to your `~/.bashrc` file, replacing `/localdata/` with wherever your cloned `Neurocommand`. Restart your terminal (`source ~/.bashrc`) and run `module avail` to see if the installation was successful.
+5. Navigate to your `neurocommand` folder and run `bash containers.sh` to see how to use the command. `bash containers.sh <module_name>` will display module versions that can be downloaded and used. As of the time of this writing, we want `bidscoin/4.3.0`. Run `bash containers.sh bidscoin` to view available BIDScoin modules and run `./local/fetch_containers.sh bidscoin 4.3.0 20240221`.
+6. Check that you successfully downloaded the `bidscoin/4.3.0` module using `module avail` and `module load bidscoin/4.3.0`. Run `module avail` once more to check that it has been loaded; loaded modules will display `(L)` beside them.
 
 #### Notes on `neurocommands`
 
